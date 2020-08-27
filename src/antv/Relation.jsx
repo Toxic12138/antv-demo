@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-const G6 = require('@antv/g6');
+import G6 from '@antv/g6';
 /**
  * AntV G6是蚂蚁金服出品的图可视化引擎
  * 官网地址https://g6.antv.vision/zh
@@ -48,8 +48,8 @@ export default class ShowRelation extends Component {
                 'superior': '总经理',
                 'superiorName': 'Henry',
                 '_selfID': '666',
-                '_self': '开发部经理',
-                '_selfName': 'Bill'
+                '_self': '开发部经理职位名称超过节点宽度啦',
+                '_selfName': '名字长度超过设定的节点宽度啦Bill'
             },
             {
                 'upID': '444',
@@ -111,7 +111,7 @@ export default class ShowRelation extends Component {
                 //解决文字过长溢出问题
                 const fittingString = (str, maxWidth, fontSize) => {
                     const fontWidth = fontSize * 1.3; // 字号+边距
-                    maxWidth = maxWidth * 2; // 需要根据自己项目调整
+                    maxWidth = maxWidth * 1.3; // 需要根据自己项目调整
                     const width = calcStrLen(str) * fontWidth;
                     const ellipsis = '…';
                     if (width > maxWidth) {
